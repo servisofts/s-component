@@ -1,10 +1,12 @@
-// @ts-nocheck
-import SComponentContainer from "./Component/SComponentContainer";
-import SView from "./Component/SView";
-import SText from "./Component/SText";
+/**  * @class ExampleComponent  */
+import SView, {  } from "./Component/SView";
+
+// export type {
+//     SComponentContainerProps,
+//     SViewProps,
+//     STextProps,
+// }
 
 export {
-    SComponentContainer,
     SView,
-    SText,
 }
