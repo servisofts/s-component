@@ -5,8 +5,6 @@ import resolve from "rollup-plugin-node-resolve";
 import babel from 'rollup-plugin-babel';
 import pkg from "./package.json";
 
-import React from 'react';
-import ReactDOM from 'react-dom';
 
 export default {
     input: "src/index.tsx",
@@ -15,10 +13,7 @@ export default {
         { file: pkg.module, format: "es", exports: "named", sourcemap: true }
     ],
     plugins: [
-        resolve({
-            jsnext: true,
-            main: true
-        }),
+        resolve(),
         external(),
         typescript({ rollupCommonJSResolveHack: true, exclude: "**/__tests__/**", clean: true }),
         commonjs({
@@ -26,14 +21,13 @@ export default {
                 'node_modules/**'
             ],
             exclude: [
-                'node_modules/process-es6/**'
+                'node_modules/process-es6/**',
             ],
             namedExports: {
-                'node_modules/react/react.js': ['Children', 'Component', 'PropTypes', 'createElement'],
+                'node_modules/react/react.js': ['Children', 'Component', 'PropTypes', 'createElement',"I"],
                 'node_modules/react-dom/index.js': ['render'],
-                'react': Object.keys(React),
-                'react-dom': Object.keys(ReactDOM),
-            }
+                'react-native': ['View', 'Dimensions', 'TouchableOpacity'],
+            }   
         }),
         babel({
             babelrc: true,
