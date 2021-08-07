@@ -1,7 +1,7 @@
 {
   "name": "servisofts-component",
-  "version": "1.13.3",
-  "description": "App of servisofts",
+  "version": "1.13.7",
+  "description": "Servisofts Component is a library for Android, IOS & web for easing app development in react-native-web.",
   "main": "build/index.js",
   "module": "build/index.es.js",
   "types": "build/index.d.ts",
@@ -14,9 +14,16 @@
     "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/servisofts/s-component.git"
+  },
   "keywords": [
     "react",
-    "first"
+    "react-native",
+    "servisofts",
+    "components",
+    "servisofts-component"
   ],
   "author": "servisofts",
   "license": "ISC",
