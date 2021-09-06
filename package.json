@@ -1,6 +1,6 @@
 {
   "name": "servisofts-component",
-  "version": "1.13.7",
+  "version": "1.2.2",
   "description": "Servisofts Component is a library for Android, IOS & web for easing app development in react-native-web.",
   "main": "build/index.js",
   "module": "build/index.es.js",
@@ -8,7 +8,8 @@
   "readmeFilename": "README.md",
   "files": [
     "build",
-    "src"
+    "src",
+    "assets"
   ],
   "scripts": {
     "build": "rollup -c",
@@ -33,22 +34,35 @@
     "react-dom": "^17.0.1",
     "react-native": "^0.64.2",
     "react-native-web": "^0.14.8",
-    "servisofts-socket": "^1.1.1"
+    "servisofts-socket": "^1.1.1",
+    "react-native-svg": "^12.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
-    "typescript": "^4.3.5",
+    "@babel/runtime": "^7.8.4",
+    "@react-native-community/eslint-config": "^1.1.0",
+    "@svgr/rollup": "^5.5.0",
     "@types/jest": "^26.0.24",
     "@types/react": "^17.0.15",
     "@types/react-dom": "^17.0.9",
-    "@types/react-native": "^0.64.12",
-    "@types/react-test-renderer": "^17.0.1",
     "@types/react-is": "^17.0.2",
+    "@types/react-native": "^0.64.12",
+    "@types/react-native-svg-uri": "^1.2.4",
+    "@types/react-query": "^1.2.9",
+    "@types/react-test-renderer": "^17.0.1",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "metro-react-native-babel-preset": "^0.59.0",
+    "react-native-svg-transformer": "^0.14.3",
     "rollup": "^2.55.1",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-image": "^1.0.2",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-typescript2": "^0.30.0"
+    "rollup-plugin-react-svg": "^3.0.3",
+    "rollup-plugin-svg-import": "^1.5.1",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "rollup-plugin-url": "^3.0.1",
+    "typescript": "^4.3.5"
   }
 }

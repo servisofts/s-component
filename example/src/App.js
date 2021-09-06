@@ -4,7 +4,7 @@ import Pages from './Pages';
 const App = () => {
   return (
     <SComponentContainer
-      debug
+      // debug
       theme={{
         initialTheme: "dark",
         themes: {

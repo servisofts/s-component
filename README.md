@@ -34,7 +34,7 @@ Servisofts Component is a library for Android, IOS & web for easing app developm
 ## Getting started
 Install the required dependences using npm:
 ```
-npm install --save servisofts-socket react-native-gesture-handler @react-navigation/native @react-navigation/stack
+npm install --save servisofts-socket react-native-gesture-handler @react-navigation/native @react-navigation/stack react-native-svg react-native-svg-transformer react-redux redux redux-thunk
 ```
 
 Install the library using npm:
@@ -176,6 +176,45 @@ const App = () => {
 
 ```
 
+In ``src/index.css`` copy this ``style``
+
+```css
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* These styles make the body full-height */
+
+html, body {
+  height: 100%;
+}
+
+/* These styles disable body scrolling if you are using <ScrollView> */
+
+body {
+  overflow: hidden;
+}
+
+/* These styles make the root element full-height */
+
+#root {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  height: 100vh;
+}
+```
+
 ## Components
 <table>
     <theader>
@@ -246,6 +285,7 @@ const App = () => {
         </tr>
     </tbody>
 <table>
+
 
 ## Types
 

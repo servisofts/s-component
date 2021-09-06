@@ -7,13 +7,15 @@ import { SViewProps } from '../SView/index';
 
 export type SGridProps = {
     col: SColType,
-    style: ViewStyle
+    style: ViewStyle,
+    colSquare?: boolean
 }
 
 export default class SGrid extends Component<SGridProps> {
     key: string;
     animSize;
     medida;
+    layout;
     constructor(props: any) {
         super(props);
         this.state = {
@@ -62,7 +64,6 @@ export default class SGrid extends Component<SGridProps> {
     render() {
         return (
             <Animated.View style={{
-
                 ...(!this.props.style.flex ? {} : {
                     flex: this.props.style.flex,
                 }),
@@ -75,9 +76,15 @@ export default class SGrid extends Component<SGridProps> {
                         outputRange: ["0%", "100%"]
                     }),
                 }),
+                ...(!this.props.colSquare ? {} : {
+                    height: this.animSize.y,
+                }),
                 ...(!this.props.style.width ? {} : {
                     width: this.props.style.width,
                 }),
+            }} onLayout={(evt) => {
+                this.layout = evt.nativeEvent.layout;
+                this.animSize.setValue({ x: this.animSize.x._value, y: this.layout.width });
             }}>
                 {this.props.children}
             </Animated.View>

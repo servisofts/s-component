@@ -1,19 +1,16 @@
 import React, { Component } from 'react';
-import { SView, SText, STheme } from 'servisofts-component'
+import { SView, SText, STheme, SNavigation, SPage } from 'servisofts-component'
 
 export default class Introduccion extends Component {
     constructor(props) {
         super(props);
         this.state = {
         };
+
     }
     render() {
         return (
-            <SView
-                col={"xs-12"}
-                style={{
-                    flex: 1,
-                }}>
+            <SPage title={"SComponent - Docs"}>
                 <SText>Introduccion</SText>
                 <SText>Que es Servisofts Component?</SText>
                 <SText>
@@ -23,15 +20,15 @@ export default class Introduccion extends Component {
                     que son utilizados a la hora de desarrollar
                     aplicaciones.
                 </SText>
-                <SView onPress={()=>{
-                    this.props.navigation.navigate("docs/install")
+                <SView onPress={() => {
+                    SNavigation.navigate("docs/install")
                 }}>
                     <SText>
                         Como usar?
                     </SText>
                 </SView>
 
-            </SView>
+            </SPage >
         );
     }
 }

@@ -1,0 +1,18 @@
+{
+  "presets": [
+      [
+          "@babel/env",
+          {
+              "modules": false
+          }
+      ],
+      "@babel/preset-react",
+      "module:metro-react-native-babel-preset"
+  ],
+  "extensions": [
+      ".web.js",
+      ".web.tsx",
+      ".js",
+      ".tsx"
+  ]
+}

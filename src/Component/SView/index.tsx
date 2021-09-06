@@ -8,9 +8,14 @@ import SGrid from '../SGrid/index';
 export type SViewProps = {
     col?: SColType,
     dir?: SDirectionType,
+    row?: boolean,
     props?: SViewProps,
     style?: ViewStyle,
-    onPress?: Function
+    onPress?: Function,
+    colSquare?: boolean,
+    center?: boolean,
+    backgroundColor?: string,
+    flex?: Number | boolean
 }
 
 export default class SView extends Component<SViewProps> {
@@ -35,17 +40,37 @@ export default class SView extends Component<SViewProps> {
             Element = TouchableOpacity;
         }
         return (
-            <SGrid col={this.state.params.col} style={this.state.params.style}>
+            <SGrid colSquare={this.props.colSquare} col={this.state.params.col} style={this.state.params.style}>
                 <Element
                     {...this.props}
                     style={{
                         width: "100%",
-                        ...(!this.state.params.style ? {} : this.state.params.style),
                         ...(this.state.params.dir != "row" ? {} : {
                             flexDirection: "row",
                             flexWrap: 'wrap',
-                            alignContent: "flex-start",
+                            // alignContent: "flex-start",
                         }),
+                        ...(!this.props.backgroundColor ? {} : {
+                            backgroundColor: this.props.backgroundColor
+                        }),
+                        ...(!this.props.row ? {} : {
+                            flexDirection: "row",
+                            flexWrap: 'wrap',
+                        }),
+                        ...(!this.props.colSquare ? {} : {
+                            height: "100%",
+                        }),
+                        ...(!this.props.center ? {
+                            
+                        } : {
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                        }),
+                        ...(!this.props.flex ? {} : {
+                            flex: this.props.flex == true ? 1 : this.props.flex
+                        }),
+                        ...(!this.state.params.style ? {} : this.state.params.style),
+
                     }}>
                     {this.props.children}
                 </Element>

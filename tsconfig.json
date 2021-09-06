@@ -28,7 +28,9 @@
         // "noUnusedParameters": true
     },
     "include": [
-        "src"
+        "src",
+        "src/declarations.d.ts",
+        
     ],
     "exclude": [
         "node_modules",

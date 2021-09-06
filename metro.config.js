@@ -26,24 +26,10 @@ module.exports = (async () => {
         },
       }),
     },
-    watchFolders: [
-      path.resolve(__dirname, '../'),
-      path.resolve(__dirname, '../../../../NPMLibrary/servisofts-ts'),
-    ],
+  
     resolver: {
       assetExts: assetExts.filter(ext => ext !== "svg"),
       sourceExts: [...sourceExts, "svg",],
-      extraNodeModules: new Proxy(
-        {},
-        {
-          get: (target, name) => {
-            if (target.hasOwnProperty(name)) {
-              return target[name]
-            }
-            return path.join(process.cwd(), `node_modules/${name}`)
-          },
-        },
-      ),
     },
   }
 })();

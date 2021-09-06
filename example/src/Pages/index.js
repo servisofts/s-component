@@ -8,7 +8,6 @@ import InicioPage from './InicioPage';
 import { Documentation } from './Documentation';
 
 const Stack = createStackNavigator();
-
 export default class Pages extends Component {
     constructor(props) {
         super(props);
@@ -20,7 +19,7 @@ export default class Pages extends Component {
                 Stack: Stack,
                 prefixes: ["https://component.servisofts.com", "component.servisofts://"],
                 pages: {
-                    Inicio: { url: "", component: InicioPage },
+                    "Inicio": { component: InicioPage },
                     ...Documentation
                 }
             }} />
